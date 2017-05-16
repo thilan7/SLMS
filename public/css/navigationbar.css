@@ -2,6 +2,17 @@
 * {margin: 0;
     padding: 0;
 }
+.SearchBarHeader{
+    width:100%;
+}
+.ButtonGroup{
+    position: relative;
+    width:100%;
+    /*left: -150px;*/
+    /*alignment: left;*/
+    /*align: left;*/
+}
+
 body{
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;}
 .topnav{

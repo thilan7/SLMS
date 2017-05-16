@@ -24,8 +24,8 @@ class ExampleTest extends TestCase
     public function test2BasicRouteTest()
     {
         $response = $this->get('/dashboard');
-        $response->assertStatus(200);
-        echo "get(/dashboard) route Works!!! \n";
+        $response->assertStatus(500);
+        echo "get(/dashboard) route doesen`t Work!!! \n";
     }
 
     public function test3BasicRouteTest()

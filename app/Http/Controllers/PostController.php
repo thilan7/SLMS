@@ -9,9 +9,11 @@
 namespace App\Http\Controllers;
 
 
+use App\Book;
 use App\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use DB;
 use Illuminate\Support\Facades\Redirect;
 
 class PostController extends Controller
@@ -25,10 +27,21 @@ class PostController extends Controller
         $post->delete();
         return redirect()->route('dashboard')->with(['message'=>'Successfully Deleted!']);
     }
+    public function getHomePage(Request $request){
+        $posts=Post::orderBy('created_at','desc')->get();
+        return view('welcome',['posts'=>$posts]);
+    }
 
     public function getDashboard(Request $request){
         $posts=Post::orderBy('created_at','desc')->get();
-        return view('dashboard',['posts'=>$posts]);
+        $books=Book::orderBy('created_at','desc')->take(5)->get();
+
+
+
+        $studentsTransacions = \App\Transaction::where('student_id', Auth::user()->admission_number)->get();
+
+
+        return view('dashboard',['posts'=>$posts,'books'=>$books,'transactions'=>$studentsTransacions,]);
     }
 
     public function postCreatePost(Request $request){

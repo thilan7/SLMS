@@ -2,7 +2,9 @@
 
 namespace App\Console;
 
+use App\FinalTransactions;
 use Illuminate\Console\Scheduling\Schedule;
+use DB;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
 class Kernel extends ConsoleKernel
@@ -26,6 +28,20 @@ class Kernel extends ConsoleKernel
     {
         // $schedule->command('inspire')
         //          ->hourly();
+
+
+//        $schedule->call(function () {
+//            $tstudent = DB::select("select * from `transactions` where `reserved_date` is not null");
+//            dd($tstudent);
+//
+//            $Finaltransaction = new FinalTransactions();
+//            $Finaltransaction->student_id ='12345';
+//
+//            $Finaltransaction->book_id ='12345';
+//            $Finaltransaction->save();
+//
+//
+//        })->daily();;
     }
 
     /**

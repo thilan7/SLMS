@@ -18,11 +18,11 @@ class CreateUsersTable extends Migration
             $table->string('first_name');
             $table->string('email');
             $table->string('password');
-            $table->string('telephone',10)->nullable();
-            $table->string('admission_number')->nullable();
-            $table->string('last_name')->nullable();
-            $table->date('birth_day')->nullable();
-            $table->enum('user_level', array('admin', 'staff','student'))->nullable();
+            $table->string('telephone',10);
+            $table->string('admission_number');
+            $table->string('last_name');
+            $table->date('birth_day');
+            $table->enum('user_level', array('admin', 'staff','student'));
             $table->rememberToken();
             $table->timestamps();
         });

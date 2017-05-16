@@ -19,12 +19,12 @@ class CreateBooksTable extends Migration
 
 
             $table->string('book_id');
-            $table->string('isbn_number');
+            $table->string('isbn_number')->nullable();
             $table->string('title');
             $table->string('author');
             $table->boolean('reference');
             $table->boolean('availability'); // whether the book is removed from the library or not
-            $table->string('description');
+            $table->string('description')->nullable();
         });
     }
 
